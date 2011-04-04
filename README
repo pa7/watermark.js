@@ -1,3 +1,13 @@
 watermark.js is a js library for creating watermarks on images. Images with a classname of your choice (default "watermark") will get processed and then apply your watermark. Your watermark doesn't have to be a .PNG or .GIF with transparency, watermark.js creates transparency even if you defined a .JPG as your watermark picture.
 
-The purpose of watermark.js is to protect images, served from your website from copying without a mark. It's not a real image protection, because if you get the document at the initial state you'll be able to read the srces but a normal user wont get it ;) watermark.js is not limited to "image-protection" only, but you could also place a little identifier or a picture of you in your images 
+The purpose of watermark.js is to protect images, served from your website from copying without a mark. It's not a real image protection, because if you get the document at the initial state you'll be able to read the srces but a normal user wont get it ;) watermark.js is not limited to "image-protection" only, but you could also place a little identifier or a picture of you in your images.
+
+How to use:
+Simply place the watermark.js right before the body closing tag and call wmark.init method. The init method gets an javascript object passed. Here are the configuration values for customization(right now):
+
+"className": the class of the elements which should get an mark. (Optionally) Default: "watermark"
+"position": "top-left"|"top-right"|"bottom-right"|"bottom-left". (Optionally) Default: "bottom-right"
+"watermark": an img element which represents your watermark. (Optionally)
+"path": the path to your watermark image. (Optionally)
+"opacity": opacity percentage, no "%" only the number [0-100] (Optionally) Default: 50
+ 
