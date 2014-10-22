@@ -106,7 +106,10 @@
 			else
 				x = gcanvas.width-watermark.width-10;
 
-
+			if(position.indexOf("middle")!=-1) {
+                		x = (gcanvas.width()-watermark.width()) / 2;
+                		y = (gcanvas.height()-watermark.height()) / 2;
+            		}
 			gctx.drawImage(watermark, x, y);
 			img.onload = null;
 	
