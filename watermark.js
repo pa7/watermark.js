@@ -81,6 +81,10 @@
 				opacity = (255/(100/config["opacity"]));
 			if(config["className"])
 				className = config["className"];
+			if(config["marginX"])
+				marginX = config["marginX"];
+			if(config["marginY"])
+				marginY = config["marginY"];
 			
 			initCanvas();
 			initWatermark();
@@ -96,16 +100,19 @@
 			var position = watermarkPosition,
 			x = 0,
 			y = 0;
+			if(marginX == undefined)
+				var marginX = 10;
+			if(marginY == undefined)
+				var marginY = 10;
 			if(position.indexOf("top")!=-1)
-				y = 10;
+				y = marginY;
 			else
-				y = gcanvas.height-watermark.height-10;
+				y = gcanvas.height-watermark.height-marginY;
 			
 			if(position.indexOf("left")!=-1)
-				x = 10;
+				x = marginX;
 			else
-				x = gcanvas.width-watermark.width-10;
-
+				x = gcanvas.width-watermark.width-marginX;
 
 			gctx.drawImage(watermark, x, y);
 			img.onload = null;
